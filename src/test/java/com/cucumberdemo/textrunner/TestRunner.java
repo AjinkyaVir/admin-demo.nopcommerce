@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		
-		features = "./features/LoginFeature.feature",
+		features = "./features/CustomerFeature.feature",
 		glue= "com.cucumberdemo.stepDefinition",
 		dryRun = false, //dryRun = true to check all the scenarios from .feature file is implemented or not
 		monochrome = true,

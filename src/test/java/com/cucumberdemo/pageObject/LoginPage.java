@@ -5,9 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+import com.cucumberdemo.utility.Base;
 
-	public static WebDriver driver;
+public class LoginPage extends Base{
+
+	//public  WebDriver ldriver;
 
 	@FindBy(id = "Email")
 	private WebElement enterEmailAddress;
@@ -21,12 +23,16 @@ public class LoginPage {
 	@FindBy(xpath = "//a[text()='Logout']")
 	private WebElement clickOnLogoutBtn;
 
-	public LoginPage(WebDriver driver) {
+	public LoginPage(WebDriver ldriver) {
 
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(ldriver, this);
 
 	}
 
+	public String getPTitle() {
+		return driver.getTitle();
+	}
+	
 	public void enterEmailAddress(String email) {
 		enterEmailAddress.clear();
 		enterEmailAddress.sendKeys(email);
